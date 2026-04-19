@@ -1,6 +1,15 @@
 ---
-layout: home
+layout: splash
 title: Ankit Jindal | Cloud & DevOps Engineer
+header:
+  overlay_color: "#000"
+  overlay_filter: "0.4"
+  caption: "Cloud & DevOps Engineer"
+  actions:
+    - label: "📞 Schedule a Call"
+      url: "https://wa.me/918882496662"
+    - label: "📧 Send Email"
+      url: "mailto:jindalankit940@gmail.com"
 ---
 
 # 👋 Hi, I'm Ankit Jindal
