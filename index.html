@@ -287,17 +287,51 @@
   }
   .avail-badge .dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
 
-  .about-cards { display: flex; flex-direction: column; gap: 16px; }
-  .info-card {
+  /* ── ABOUT RIGHT PANEL ── */
+  .about-right { display: flex; flex-direction: column; gap: 14px; }
+
+  .impact-card {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 10px; padding: 20px 24px;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    border-radius: 12px; padding: 22px 24px;
+    transition: all 0.3s;
   }
-  .info-card:hover { border-color: var(--border2); box-shadow: 0 4px 24px rgba(56,189,248,0.06); }
-  .info-card-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: var(--text3); text-transform: uppercase; margin-bottom: 8px; }
-  .info-card-title { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
-  .info-card-sub { font-size: 13px; color: var(--text2); }
+  .impact-card:hover { border-color: var(--border2); box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+  .impact-card-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: var(--text3); text-transform: uppercase; margin-bottom: 16px; }
+  .impact-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .impact-metric-val { font-family: 'Syne', sans-serif; font-size: 30px; font-weight: 800; color: var(--accent); line-height: 1; margin-bottom: 5px; }
+  .impact-metric-val.green { color: var(--green); }
+  .impact-metric-val.purple { color: var(--purple); }
+  .impact-metric-label { font-size: 12px; color: var(--text2); line-height: 1.5; }
+
+  .cost-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px 24px;
+    transition: all 0.3s;
+  }
+  .cost-card:hover { border-color: var(--border2); }
+  .cost-card-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: var(--text3); text-transform: uppercase; margin-bottom: 14px; }
+  .cost-bar-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+  .cost-bar-from { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; color: var(--text3); text-decoration: line-through; }
+  .cost-bar-arrow { font-size: 13px; color: var(--text3); }
+  .cost-bar-to { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; color: var(--green); }
+  .cost-bar-track { height: 6px; background: rgba(255,255,255,0.06); border-radius: 10px; overflow: hidden; margin-bottom: 8px; }
+  .cost-bar-fill { height: 100%; width: 62.5%; background: linear-gradient(to right, var(--accent), var(--green)); border-radius: 10px; animation: barGrow 1.2s ease-out forwards; transform-origin: left; }
+  @keyframes barGrow { from { width: 100%; } to { width: 62.5%; } }
+  .cost-bar-note { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--green); }
+
+  .quick-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .qf-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px 16px;
+    transition: all 0.2s;
+  }
+  .qf-item:hover { border-color: var(--border2); transform: translateY(-2px); }
+  .qf-icon { font-size: 20px; margin-bottom: 8px; }
+  .qf-label { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
+  .qf-val { font-size: 13px; font-weight: 500; color: var(--text); line-height: 1.4; }
 
   /* ── SKILLS ── */
   #skills { padding: 120px 0; background: linear-gradient(to bottom, transparent, rgba(15,30,56,0.4), transparent); }
@@ -629,27 +663,69 @@
         </div>
       </div>
 
-      <div class="about-cards">
-        <div class="info-card reveal reveal-delay-1">
-          <div class="info-card-label">Current Role</div>
-          <div class="info-card-title">DevOps Engineer @ Eventstrat AI</div>
-          <div class="info-card-sub">Managing production AWS infrastructure, multi-tenant platforms, and large-scale event deployments.</div>
+      <div class="about-right">
+
+        <!-- Impact Numbers -->
+        <div class="impact-card reveal reveal-delay-1">
+          <div class="impact-card-label">// Real Impact Numbers</div>
+          <div class="impact-metrics">
+            <div class="impact-metric">
+              <div class="impact-metric-val">$3K</div>
+              <div class="impact-metric-label">Monthly cloud cost saved at Eventstrat AI</div>
+            </div>
+            <div class="impact-metric">
+              <div class="impact-metric-val green">6+</div>
+              <div class="impact-metric-label">National govt events supported at scale</div>
+            </div>
+            <div class="impact-metric">
+              <div class="impact-metric-val purple">3+</div>
+              <div class="impact-metric-label">Production platforms owned end-to-end</div>
+            </div>
+            <div class="impact-metric">
+              <div class="impact-metric-val">37%</div>
+              <div class="impact-metric-label">AWS infrastructure cost reduction achieved</div>
+            </div>
+          </div>
         </div>
-        <div class="info-card reveal reveal-delay-2">
-          <div class="info-card-label">Location</div>
-          <div class="info-card-title">Delhi, India</div>
-          <div class="info-card-sub">Available for remote work globally and on-site engagements within India.</div>
+
+        <!-- Cost Optimization Visual -->
+        <div class="cost-card reveal reveal-delay-2">
+          <div class="cost-card-label">// AWS Cost Optimization</div>
+          <div class="cost-bar-row">
+            <span class="cost-bar-from">$8,000/mo</span>
+            <span class="cost-bar-arrow">——→</span>
+            <span class="cost-bar-to">$5,000/mo</span>
+          </div>
+          <div class="cost-bar-track">
+            <div class="cost-bar-fill"></div>
+          </div>
+          <div class="cost-bar-note">↓ 37.5% reduction · Rightsizing + Reserved Instances + Arch Optimization</div>
         </div>
-        <div class="info-card reveal reveal-delay-3">
-          <div class="info-card-label">Focus Area</div>
-          <div class="info-card-title">Cloud Cost Optimization & Automation</div>
-          <div class="info-card-sub">Reduced AWS costs from $8,000 → $5,000/month — a 37.5% saving within months of joining.</div>
+
+        <!-- Quick Facts Grid -->
+        <div class="quick-facts reveal reveal-delay-3">
+          <div class="qf-item">
+            <div class="qf-icon">📍</div>
+            <div class="qf-label">Based In</div>
+            <div class="qf-val">Delhi, India · Remote OK</div>
+          </div>
+          <div class="qf-item">
+            <div class="qf-icon">☁️</div>
+            <div class="qf-label">Primary Cloud</div>
+            <div class="qf-val">AWS · Multi-tenant Infra</div>
+          </div>
+          <div class="qf-item">
+            <div class="qf-icon">🎓</div>
+            <div class="qf-label">Education</div>
+            <div class="qf-val">B.Com IGNOU · DevOps Cert</div>
+          </div>
+          <div class="qf-item">
+            <div class="qf-icon">🤝</div>
+            <div class="qf-label">Availability</div>
+            <div class="qf-val">Freelance · Full-time</div>
+          </div>
         </div>
-        <div class="info-card reveal">
-          <div class="info-card-label">Education</div>
-          <div class="info-card-title">B.Com — IGNOU · DevOps Cert — Tutedude</div>
-          <div class="info-card-sub">Planning MCA. CBSE XII: 93.6% · X: 8.8 CGPA</div>
-        </div>
+
       </div>
     </div>
   </div>
