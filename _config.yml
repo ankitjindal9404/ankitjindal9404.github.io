@@ -83,3 +83,4 @@ footer: >
 plugins:
   - jekyll-seo-tag
   - jekyll-include-cache
+  - jekyll-remote-theme
