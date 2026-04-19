@@ -544,9 +544,17 @@
   @media (max-width: 600px) {
     .hero-btns { flex-direction: row; }
     .btn-primary, .btn-secondary { flex: 1; text-align: center; padding: 14px 16px; }
-    .tl-item { padding-left: 44px; }
-    .timeline::before { left: 12px; }
-    .tl-dot { left: 4px; }
+
+    /* Timeline: hide the left line & dot on mobile, go full-width cards */
+    .timeline::before { display: none; }
+    .tl-item { padding-left: 0; margin-bottom: 16px; }
+    .tl-dot { display: none; }
+    .tl-card { padding: 20px; border-radius: 10px; }
+    .tl-role { font-size: 16px; }
+    .tl-header { flex-direction: column; gap: 8px; align-items: flex-start; }
+    .tl-badge { align-self: flex-start; }
+    .tl-bullets li { font-size: 13px; gap: 8px; padding: 4px 0; }
+
     .proj-grid { grid-template-columns: 1fr; }
     .services-grid { grid-template-columns: 1fr; }
     .edu-grid { grid-template-columns: 1fr; }
