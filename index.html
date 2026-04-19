@@ -29,6 +29,7 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   html { scroll-behavior: smooth; }
+  section[id] { scroll-margin-top: 80px; }
 
   body {
     background: var(--navy);
@@ -151,6 +152,7 @@
 
   .hero-grid-bg {
     position: absolute; inset: 0;
+    pointer-events: none;
     background-image:
       linear-gradient(var(--border) 1px, transparent 1px),
       linear-gradient(90deg, var(--border) 1px, transparent 1px);
@@ -548,7 +550,7 @@
         <div class="hero-title">
           <span id="typewriter">DevOps & Cloud Engineer</span><span class="type-cursor">_</span>
         </div>
-        <p class="hero-tagline">Cloud & DevOps Engineer — specializing in AWS infrastructure, CI/CD automation, and Kubernetes orchestration. I help startups and companies build reliable, cost-efficient, and scalable systems.</p>
+        <p class="hero-tagline">Cloud & DevOps Engineer — specializing in infrastructure, CI/CD, and Kubernetes. I help startups and companies build reliable, cost-efficient, and scalable systems.</p>
         <div class="hero-btns">
           <a href="#contact" class="btn-primary">Hire Me</a>
           <a href="#projects" class="btn-secondary">View Projects →</a>
